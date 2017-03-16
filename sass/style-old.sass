@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css?family=Monda:400,700|Montserrat:700,900&subset=latin-ext')
+
+@import "variables.sass"
+@import "grid.sass"
+@import "mixins.sass"
+
+/* Global styles */
+body
+	font-family: $primary-font
+
+section
+	> .container
+		margin: 60px auto
+		text-align: center
+		p
+			line-height: 1.6em
+
+/* Header, menu, logo */
+header
+	background-color: $background-color
+	border-bottom: 5px solid $completive-color
+	height: 85px
+	nav
+		ul
+			margin: 0
+			padding: 0
+			list-style-type: none
+			float: right
+			li
+				display: inline-block
+				a
+					line-height: 85px
+					display: block
+					padding: 0 20px
+					color: $primary-font-color
+					text-decoration: none
+					text-transform: uppercase
+					&:hover
+						background-color: $completive-color
+
+.logo
+	float: left
+	color: $primary-font-color
+	line-height: 85px
+	font-size: 30px
+
+/*Welcome */
+.hero
+	+flex(flex-end)
+	height: calc(100vh - 85px)
+	background-image: url("http://arekrybka.com/stock_images/stocksnap_oyab6vjl8i.jpg")
+	background-size: cover
+	background-position: center
+	background-attachment: fixed
+
+.slogan
+	background-color: $opacity-color
+	max-width: 1000px
+	width: 800px
+	color: $primary-font-color
+	padding: 50px
+	font-size: 40px
+	text-transform: uppercase
+	h1, h6
+		font-weight: normal
+	h2
+		font-weight: bold
+
+/* Benefits */
+.benefits
+	i, h3
+		transition: 1s
+	i
+		+border-radius(15px)
+		+dimensions(100px, 100px)
+		font-size: 70px
+		padding: 15px 0
+		color: #333
+		margin: 0 auto
+		cursor: pointer
+		&:hover
+			transform: scale(1.2)
+			+ figcaption
+				h3
+					transform: scale(1.1)
+	h3
+		padding-top: 5px
+		padding-bottom: 5px
+		font-size: 1.5em
+	p
+		padding: 0 10px
+		font-size: 1.2em
+
+/* Featured works, R U Ready */
+.featured-works
+	text-align: center
+	h1
+		font-size: 2.2em
+		font-weight: 900
+	h2
+		font-size: 1.8em
+		font-weight: 700
+		padding: 10px 0
+	p
+		font-size: 1.2em
+
+/* Gallery */
+.gallery
+	[class^="img-col-"]
+		padding: 0
+	img
+		+dimensions(100%, 300px)
+		display: block
+		object-fit: cover
+
+.layer
+	+flex
+	position: absolute
+	+dimensions(inherit, 300px)
+	transition: 0.5s
+	&:hover
+		background-color: $opacity-color
+		i
+			visibility: visible
+	i
+		visibility: hidden
+		font-size: 25px
+		padding: 10px
+		margin: 5px
+		background: #fcfdff
+		+border-radius(5px)
+
+/* Team */
+.team
+	text-align: center
+	font-size: 24px
+	.row
+		+flex(space-between, $flex-wrap: wrap)
+	img
+		+border-radius(50%)
+		+dimensions(100%, 100%)
+		display: block
+	h4
+		padding: 20px 0
+
+.circle
+	+dimensions(250px, 250px)
+	position: relative
+	margin: 0 auto
+
+.team-layer
+	+flex
+	+dimensions(100%, 100%)
+	+border-radius(50%)
+	position: absolute
+	top: 0
+	left: 0
+	color: $primary-font-color
+	&:hover
+		background: $opacity-color
+		p
+			visibility: visible
+	p
+		padding: 0 10px
+		visibility: hidden
+		font-weight: bold
+
+/* Promotion */
+.promotion
+	+flex(null)
+	+dimensions(100%, 350px)
+	background: $background-color
+	color: $primary-font-color
+	> .container
+		> .row
+			+flex
+	img
+		+border-radius(20%)
+		width: 100%
+		object-fit: fill
+	h3, p
+		text-align: left
+		padding-left: 25px
+	h3
+		font-size: 36px
+
+/* Numbers */
+.numbers
+	+flex(space-between, $align-items: null)
+	h2, p
+		font-weight: bold
+		text-align: center
+	h2
+		font-size: 56px
+		font-family: $secondary-font
+	p
+		font-size: 24px
+		text-transform: uppercase
+		color: $completive-color
+
+/* Footer */
+footer
+	background: $background-color
+	color: $primary-font-color
+	h2
+		text-align: left
+		padding: 35px 10px
+		font-size: 32px
+		&::after
+			padding-left: 10px
+			letter-spacing: -5px
+			content: "-----------"
+			color: $primary-font-color
+
+.get-in-touch
+	div[class="col-4"]
+		font-weight: bold
+	div
+		p:nth-child(2)
+			padding-bottom: 15px
+
+.social
+	+flex(space-between, $align-items: null)
+	font-size: 30px
+	padding-top: 20px
+	i
+		+dimensions(50px, 50px)
+		padding: 10px
+		background: #0EC000
+		text-align: center
+		border-radius: 5px
+		cursor: pointer
+
+.copyright
+	margin-top: 35px
+	padding: 25px 0
+	background: $copyright-color
+	text-align: center
+
+/* Media queries */
+@media (min-width: 992px) and (max-width: 1199px)
+	/* Header */
+	// header
+	// 	height: auto
+	// 	> nav
+	// 		> ul
+	// 			float: none
+	// 			text-align: center
+	
+	.logo
+		float: none
+		text-align: center
+	
+	/* Welcome */
+	.slogan
+		max-width: 500px
+		padding: 30px
+		font-size: 25px
+	
+	/* Team */
+	.circle
+		+dimensions(220px, 220px)
+	
+	.team
+		font-size: 20px
+		h4
+			padding: 10px 0
+	
+	/* Promotion */
+	.promotion
+		img
+			margin-left: 2%
+		h3
+			font-size: 32px
+		h3, p
+			padding-left: 20px
+	
+	/* Numbers */
+	.numbers
+		h2
+			font-size: 48px
+		p
+			font-size: 20px
+	
+	/* Footer */
+	footer
+		h2
+			padding-bottom: 5px
+			font-size: 28px
+			&::after
+				content: "------"
+
+@media (min-width: 768px) and (max-width: 991px)
+	/* Header */
+	header
+		height: auto
+		> nav
+			> ul
+				float: none
+				text-align: center
+				li
+					display: block
+	.logo
+		float: none
+		text-align: center
+	
+	/* Team */
+	.circle
+		+dimensions(250px, 250px)
+	
+	/* Promotion */
+	.promotion
+		background-image: url("https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/7HN02X1UYI.jpg")
+		background-size: cover
+		.row
+			> .col-4
+				display: none
+		.col-s-12
+			background: $opacity-color
+	
+	/* Numbers */
+	.numbers
+		div[class^="col-"]
+			height: 150px
+	
+	/* Footer */
+	footer
+		h2
+			text-align: center
+		h2::after
+			display: none
+	
+	.about-us
+		padding-left: 2%
+
+	.get-in-touch
+		text-align: center
+	
+	.social
+		flex-flow: row wrap
+		justify-content: center
+		i
+			margin: 5%
+
+@media screen and (max-width: 767px)
+	/* Header */
+	header
+		height: auto
+		> nav
+			> ul
+				float: none
+				text-align: center
+				li
+					display: block
+	.logo
+		float: none
+		text-align: center
+	
+	/* Welcome */
+	.slogan
+		font-size: 25px
+	
+	/* Gallery */
+	.layer
+		i
+			visibility: visible
+	
+	/* Promotion */
+	.promotion
+		background-image: url("https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/7HN02X1UYI.jpg")
+		background-size: cover
+		height: auto
+		.row
+			> .col-4
+				display: none
+		.col-s-12
+			background: $opacity-color
+	
+	/* Numbers */
+	.numbers
+		div[class^="col-"]
+			margin-bottom: 30px
+	
+	/* Footer */
+	footer
+		> .container
+			text-align: justify
+			padding: 0 5%
+		h2
+			text-align: center
+			&:after
+				display: none
+	
+	.col-xs-6:nth-of-type(odd)
+		text-align: center
+	
+	.social
+		justify-content: space-around
+
+@media screen and (max-width: 512px)
+	/* Welcome */
+	.slogan
+		font-size: 20px
+
+	/* Featured works */
+	.featured-works
+		h1
+			font-size: 2em
+
+	/* Promotion */
+	.promotion
+		height: auto
+
+	.promotion
+		h3 
+			font-size: 28px
+			text-align: center
+
+	/* Footer */
+	.get-in-touch
+		text-align: center
+
+	.social
+		justify-content: center
+		flex-flow: row wrap
+
+	.social
+		i
+			margin: 5%

@@ -1,0 +1,31 @@
+=flex($justify-content: center, $align-items: center, $flex-wrap: null)
+	display: flex
+	justify-content: $justify-content
+	align-items: $align-items
+	flex-wrap: $flex-wrap
+
+=border-radius($radius)
+	-webkit-border-radius: $radius
+	-moz-border-radius:    $radius
+	-ms-border-radius:     $radius
+	border-radius:         $radius
+
+=dimensions($width: null, $height: null)
+	width: $width
+	height: $height
+
+=mq-screen-l
+	@media (min-width: $screen-m) and (max-width: $screen-l - 1px)
+		@content
+
+=mq-screen-m
+	@media (min-width: $screen-s) and (max-width: $screen-m - 1px)
+		@content
+
+=mq-screen-s
+	@media screen and (max-width: $screen-s - 1px)
+		@content
+
+=mq-screen-vs
+	@media screen and (max-width: $screen-vs)
+		@content

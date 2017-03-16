@@ -1,0 +1,59 @@
+*
+	box-sizing: border-box
+	margin: 0
+
+[class*="col-"]
+	float: left
+	min-height: 1px
+	padding: 5px
+
+
+@for $i from 1 through $grid-size
+	.col-#{$i}
+		width: (100% / $grid-size) * $i
+
+@for $i from 1 through $grid-size
+	.col-offset-#{$i}
+		margin-left: (100% / $grid-size) * $i
+
+@for $i from 1 through $img-grid-size
+	.img-col-#{$i}
+		width: (100% / $img-grid-size) * $i
+
+.container
+	max-width: 1200px
+	margin: 0 auto
+	width: 100%
+
+.row:before,
+.row:after 
+	content: ""
+	display: table
+	clear: both
+
+
+section
+	>.container
+		margin: 60px auto
+		text-align: center
+		p
+			line-height: 1.6em
+
+@media (min-width: $screen-m) and (max-width: $screen-l - 1px)
+	@for $i from 1 through $grid-size
+		.col-m-#{$i}
+			width: (100% / $grid-size) * $i
+
+@media (min-width: $screen-s) and (max-width: $screen-m - 1px)
+	@for $i from 1 through $grid-size
+		.col-s-#{$i}
+			width: (100% / $grid-size) * $i
+
+@media screen and (max-width: $screen-s - 1px)
+	@for $i from 1 through $grid-size
+		.col-xs-#{$i}
+			width: (100% / $grid-size) * $i
+
+@media screen and (max-width: $screen-vs)
+	.col-xxs-12
+		width: 100%
