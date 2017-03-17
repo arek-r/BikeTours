@@ -1,0 +1,23 @@
+{
+  "name": "kodilla-biketours",
+  "version": "1.0.0",
+  "description": "BikeTours with grunt",
+  "main": "index.js",
+  "scripts": {
+    "test": "biketours-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arek-r/BikeTours.git"
+  },
+  "author": "Arkadiusz Rybka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arek-r/BikeTours/issues"
+  },
+  "homepage": "https://github.com/arek-r/BikeTours#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-sass": "^2.0.0"
+  }
+}
